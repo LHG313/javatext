@@ -28,7 +28,9 @@ public class Main {
     ArrayList<Article> articles = new ArrayList<Article>();
 
     makeTestData(articles);
-
+    if(articles.size() > 0){
+      articlesLastId = articles.get(articles.size() -1).id;
+    }
 
     while (true) {
       System.out.printf("명령) ");
@@ -44,7 +46,7 @@ public class Main {
         System.out.println("번호 / 제목");
         System.out.println("--------------------");
 
-        for (int i = articles.size() -1; i >=0; i--) {
+        for (int i = articles.size() - 1; i >= 0; i--) {
           Article article = articles.get(i);
           System.out.printf("%d / %s\n", article.id, article.title);
         }
